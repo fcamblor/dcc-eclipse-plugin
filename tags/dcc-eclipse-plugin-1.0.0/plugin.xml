@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+       point="org.eclipse.jdt.core.classpathContainerInitializer">
+      <classpathContainerInitializer
+          id="com.googlecode.eclipse.plugin.directorycpcontainer.DIR_CONTAINER"
+          class="com.googlecode.eclipse.plugin.directorycpcontainer.DirectoryContainerInitializer"/>
+   </extension>
+   
+   <extension 
+       point="org.eclipse.jdt.ui.classpathContainerPage">
+      <classpathContainerPage
+          id="com.googlecode.eclipse.plugin.directorycpcontainer.DIR_CONTAINER"
+          name="Directory classpath container"
+          class="com.googlecode.eclipse.plugin.directorycpcontainer.DirectoryContainerPage"/>
+   </extension>
+   
+   <extension
+         point="org.eclipse.jdt.ui.javaElementFilters">
+         <filter
+               id="com.googlecode.eclipse.plugin.directorycpcontainer.ContainerDirFilter"
+               targetId="org.eclipse.jdt.ui.PackageExplorer"
+               enabled="true"
+               name="%ContainerFilterName"
+               description="%ContainerFilterDesc"
+               class="com.googlecode.eclipse.plugin.directorycpcontainer.ContainerDirFilter"/>
+   </extension>
+</plugin>
